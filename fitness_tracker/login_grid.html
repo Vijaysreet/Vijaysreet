@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href=".\css\login_gridc.css">
+    <script>
+        async function handleLogin(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+
+            const uname = document.getElementById("uname").value;
+            const password = document.getElementById("pwd").value;
+
+            try {
+                const response = await fetch("login.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ uname, password }),
+                });
+
+                const result = await response.json();
+
+                if (result.status === "success") {
+                    
+                    window.location.href = "register.html"; // Redirect to another page
+                } else {
+                    // Display error message
+                    alert(result.message); // Show the error message from the backend
+                }
+            } catch (error) {
+                alert("An error occurred. Please try again."); // General error message for network or server issues
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="left"></div>
+    <div class="right"></div>
+
+    <div class="content">
+        <div class="image">
+            <img src="./img/login_img.png" height="384px" width="550px">
+        </div>
+        <div class="welcome">
+            <img id="crystaldelta" src="./img/crystaldelta_img.png" height="90px" width="85px">
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <p style="font-family: monospace; font-size: 15px;">Welcome Back!</p>
+                <input type="text" id="uname" name="uname" placeholder="Username" required><br><br>
+                <input type="password" id="pwd" name="password" placeholder="Password" required><br><br>
+                <button id="login" type="submit">Login</button><br>
+                <p>Don't have an account? <a href="register.html">Register</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

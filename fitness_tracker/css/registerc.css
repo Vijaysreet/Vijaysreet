@@ -1,0 +1,30 @@
+label{
+    padding-top: 10px;
+}
+#uname{
+    margin-top:0px;
+}
+form{
+    text-align: left;
+    padding-left: 25px;
+}
+.content{
+    height: 75%;
+   
+}
+.content > .image{
+    padding: 0px;
+    /* height:80% */
+
+}
+.content > .image > img{
+    padding-top: -10px;
+    border-radius: 15px 15px ;
+}
+.content > div{
+    padding-top: 0px;
+    padding-right: 15px;
+    margin: 0px;
+}
+
+
