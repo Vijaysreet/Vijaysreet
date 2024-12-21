@@ -1,0 +1,495 @@
+ body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+        }
+        .card_steps,.card_water, .card_calories ,.card_heart-rate {
+            height: 75%; /* Set the height of the card to 30% of its parent */
+            width: 75%; /* Set the height of the card to 30% of its parent */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center the canvas vertically */
+            width: 120px;
+            height: 100px;
+            font-size: 10px;
+           
+        }
+       
+        .run{
+            display: flex;
+            text-align: center;
+           padding-top: 30px;
+           padding: 20px;
+            width: 300px;
+            height: 70px;
+            background-color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            font-family:cursive;
+            margin-bottom: 20px;
+        }
+        .run1{
+            font-size: 20px;
+        font-style: inherit;
+        color: #999;
+        padding-left: 20px;
+        padding-right: 10px;
+        margin-left: -20px;
+        margin-bottom: 90px;
+        margin-top: -10px;
+        }
+        .run2{
+           
+                width: 60px;
+                height: 60px;
+                padding: 10px;
+              
+        } 
+       
+        .healthy{
+            width: 100px;
+            height: 100px;
+            background-color: rgba(129, 210, 8, 0.582);
+            border-radius: 50%;
+        }
+        .home{
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 50%;
+            
+        }
+        .home:hover{
+            width: 70px;
+            height: 70px;
+            background-color: rgba(129, 210, 8, 0.582);
+            border-radius: 50%;
+        }
+        .walk{
+            width: 45px;
+            height: px;
+            background-color: white;
+            border-radius: 50%;
+            border: 2.5px solid black;
+        }
+        .walk:hover{
+            width: 70px;
+            height: 70px;
+            background-color: rgba(124, 204, 5, 0.436);
+            border-radius: 50%;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 150px 3fr 1.2fr;
+            width: 100%;
+            height: 100%;
+        }
+
+        .sidebar {
+            background-color: #eef5f9;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidebar .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: rgb(126, 204, 9);
+            margin-bottom: 40px;
+        }
+
+        .menu a {
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .menu a.active {
+            color: #6c63ff;
+            font-weight: bold;
+        }
+
+        main {
+           
+            background-color: rgba(128, 128, 128, 0.167);
+            overflow-y: auto;
+            border-radius: 10px;
+            padding-left: 10px;
+        }
+        .yoga{
+            display: flex;
+            text-align: center;
+           padding-top: 20px;
+           padding: 20px;
+            width: 300px;
+            height: 70px;
+            background-color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            font-family:cursive;
+        }
+       .time{
+         width: 50px;
+         height: 50px;
+         padding: 10px;
+       }
+       .swim{
+        font-size: 20px;
+        font-style: inherit;
+        color: #999;
+        padding-left: 20px;
+        padding-right: 10px;
+        margin-left: -50px;
+       }
+       .swi{
+        font-size: 16px;
+        font-style: inherit;
+        color: #999;
+        padding-left: 20px;
+        padding-right: 10px;
+       }
+       .swi1{
+        font-size: 16px;
+        font-style: inherit;
+        color: #999;
+        padding-left: 25px;
+        padding-right: 10px;
+       }
+       .swi2{
+        font-size: 30px;
+        margin-top: -20px;
+        color: #999;
+        margin-left: 20px;
+       }
+        header {
+            display: flex;
+            flex-direction: column; 
+            align-items: flex-start; 
+            text-align: left;        /* Align text to the left */
+            position: relative;     /* Ensures positioning works correctly inside the header */
+            gap: 5px;
+                      /* Optional: Adds some padding around the header */
+        }
+
+        header h1 {
+             color: rgba(0, 0, 0, 0.63);
+            font-size: 25px;
+            font-family:'Courier New', Courier, monospace;
+            top: 10px;            
+            left: 10px; 
+            margin-bottom: -20px;
+        }
+
+        header h2 {
+            margin-top: 0;
+            color: black;
+            font-size: 50px;
+        }
+
+        .subscribe {
+            background-color: rgb(125, 203, 9);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            position: absolute;   
+            top: 10px;            
+            right: 10px;          
+            display: flex;
+            align-items: center;   
+        }
+    
+
+        .stats {
+            display: grid;
+            /* font-size: 40px; */
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            margin: 20px 0;
+            
+        }
+
+        .card_steps,.card_water,.card_calories,.card_heart-rate {
+            background-color: white;
+            padding: 36px;
+            border-radius: 10px;
+            font-size: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .activity-progress {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            
+        }
+        .activity-progress > .activity {
+            /* display: grid;
+            grid-template-columns: 1fr 1fr; */
+            gap: 30px;
+            height: 75%;
+        }
+        .activity-progress > .progress {
+            /* display: grid;
+            grid-template-columns: 1fr 1fr; */
+            gap: 30px;
+            height: 300px;
+            width: 500px;
+            margin-left: 90px;
+            text-align: center;
+        }
+        .activity-progress .progress h3 {
+            margin-bottom:-50px; /* Adjust this value as needed */
+        }
+      
+        #progressChart {
+            margin-top: 0; /* Ensure no extra margin here */
+        }
+
+        .chart {
+            background-color: #eef5f9;
+            border-radius: 10px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+
+        .recommendations {
+            margin: 20px 0;
+        }
+        .action{
+          display: grid;
+          grid-template-columns: auto auto;
+          background-color: red;
+          gap:30px
+        }
+
+        .trainer-cards {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        .trainer {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .rec_food {
+            right: 90%;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            z-index: 2;
+        }
+        
+        .breakfast {
+            background-color: black;
+            flex-direction: row;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .profile {
+            background-color: rgba(128, 128, 128, 0.205);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border-radius: 10px;
+        }
+
+        .user {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 10px; /* Adjust spacing between columns */
+            width: 100%;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 10px; /* Optional background for clarity */
+        }
+        
+        .photo-col {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .photo {
+            width: 50px; /* Adjust size */
+            height: 50px;
+            border-radius: 50%; /* Optional: Make the photo circular */
+        }
+        
+        .details-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px; /* Adjust spacing between username and location */
+        }
+        
+        .name {
+            font-size: 18px;
+            margin: 0;
+            font-weight: bold;
+        }
+        
+        .us {
+            display: flex;
+            align-items: center;
+            gap: 5px; /* Adjust spacing between location icon and text */
+        }
+        
+        .location {
+            width: 16px; /* Adjust icon size */
+            height: 16px;
+        }
+        
+        .loc {
+            font-size: 14px;
+            margin: 0;
+            color: #666;
+        }
+        
+        .logout-col {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        
+        .logout {
+            width: 25px; /* Adjust logout icon size */
+            height: 25px;
+            
+            
+        }
+        
+        
+        
+       
+        .trainer-cards{
+            height: 325px;
+           
+         }
+        
+            .zero{
+                background-color: #cdd10e;
+                width: 70px;
+                height: 20px;
+                text-align: center;
+                padding: 20px;
+                border-radius: 25px 25px 25px 25px ;
+                font-size: 30px;
+                font-style: bold;
+
+
+            }
+            .set{
+                font-size: 20px;
+                font-family:cursive;
+            }
+            .cards{
+                display: flex;
+                gap:10px;
+                padding-left: 10px;
+               
+            }
+           .fit{
+            color: #ccc;
+           }
+            .trainer1{
+                width: 180px;
+                height: 100px;
+                border-radius: 20px;
+            }
+            .trainerimage{
+                display: grid;
+            }
+            .tr{
+                width: 50px;
+                height: 50px;
+            }
+            .achive{
+                width: 35px;
+                height: 35px;
+                background-color: #fbff00;
+                border-radius: 50%;
+                border-color: orange;
+                border-width: 10px;
+            }
+            .fast {
+                background-color: white;
+                padding: 15px;
+                border-radius: 10px;
+                width: 300px;
+                text-align: center;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+            .break{
+                background-color: hwb(84 18% 0% / 0.311);
+                height: 70px;
+                width: 300px;
+                gap:60px;
+                display: flex;
+                border-radius: 10px;
+                padding-left: 10px;
+            }
+            .avaca{
+                height: 70px;
+                width: 70px;
+                border-radius: 60%;
+                padding-top: 10px;
+                padding-right: 20px;
+            }
+            .breakimage{
+                display: flex;
+            }
+            
+            .point{
+                color: red;
+                font-size: 30px;
+            }
+            .carbs{
+                display: flex;
+                
+            }
+
+        .profile-stats, .goals, .schedule {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .schedule p {
+            margin: 10px 0;
+        }
+
+        .goals h3, .schedule h3 {
+            margin-bottom: 15px;
+        }
+        .chart {
+    background-color: transparent;
+    border-radius: 20px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

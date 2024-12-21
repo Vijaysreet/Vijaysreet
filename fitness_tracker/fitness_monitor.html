@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> -->
+
+    <link rel="stylesheet" href=".\css\main_style.css">
+    <link rel="stylesheet" href=".\css\progressStyle.css">
+    <script src="progressBarJ.js"></script>
+    <script src="Fitness_track.js"></script>
+    <link rel="stylesheet" href=".\css\mainpagecss.css">
+    <style>
+        .tab > .tablinks:hover{
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+   
+
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div><img src=".\img\healthy.png" class="healthy"> </div>
+            <div class="logo">Healthy</div>
+            <nav class="menu">
+                <a href="#" id="homeLink" ><img src=".\img\home.png" class="home" alt="Home"></a>
+                <a href="#" id="stepsLink"><img src=".\img\walk.png" class="walk" alt="Steps"></a>
+                <a href="#" id="waterLink"><img src=".\img\calendar1.png" class="walk" alt="Water"></a>
+                <a href="#" id="caloriesLink"><img src=".\img\chat.png" class="walk" alt="Calories"></a>
+                <a href="#" id="heartRateLink"><img src=".\img\setting.png" class="walk" alt="Heart Rate"></a>
+                <a href="#" id="settingsLink"><img src=".\img\activity-tracker 1.png" class="walk" alt="Settings"></a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <header>
+                <h1 style="margin-top:0">Good Morning</h1>
+                <h2>Welcome Back 🎉</h2>
+                <button class="subscribe">Subscribe</button>
+            </header>
+            <section class="stats">
+                <div class="card_steps">
+                    <h3>Steps</h3>
+                    <p id="profile-completion">0% your goal</p>
+                    <p id="goal_step">0 Steps</p>
+                </div>
+                <div class="card_water">
+                    <h3>Water</h3>
+                    <p id="goal_water">0 litre</p>
+                </div>
+                <div class="card_calories">
+                    <h3>Calories</h3>
+                    <p id="goal_calories">0 calories</p>
+                    
+                </div>
+                <div class="card_heart-rate">
+                    <h3>Heart Rate</h3>
+                    <p id="goal_heart_rate">0 calories</p>
+                    
+                </div>
+            </section>
+            
+            <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+            <section class="activity-progress">
+                <div class="activity">
+                    <h3>Activity</h3>
+                    <canvas id="activityChart"></canvas>
+                </div>
+                <div class="progress">
+                    <h3>Progress</h3>
+                    <canvas id="progressChart"></canvas>
+                </div>
+            </section>
+          
+
+            <section class="recommendations">
+                <!-- <div class="action"> -->
+
+                    <h3>Recommended Trainer for you</h3>
+                    <div class="trainer-cards">
+                    <div class="trainer">
+                          <div class="trainerimage">  
+                          <img src=".\img\nutrition_coach1.png" alt="Trainer"  class="trainer1">
+                         
+
+                          </div>
+                            <h2>Sangeetha Thevar</h2>
+                            <p class="fit">Fitness Specialist</p>
+                           <div class="cards"> <div >
+                            <img src=".\img\achievements (1).png"  class="achive"/>
+                            <h3 >25</h3>
+                            </div>
+                            <div >
+                            <img src=".\img\star.png"  class="achive"/>
+                            <h3>140</h3>
+                            
+                            </div>
+                            <h4 class="fit"><a href="https://in.linkedin.com/in/sangeetha-thevar-ba7403104">View profile</a></h4>
+                            </div>
+                        </div>
+                        <div class="trainer">
+                          <div class="trainerimage">  
+                          <img src=".\img\trainer 1.avif" alt="Trainer"  class="trainer1">
+                          
+
+                          </div>
+                            <h2>Rogan Negi</h2>
+                            <p class="fit">Fitness Specialist</p>
+                           <div class="cards"> <div >
+                            <img src=".\img\achievements (1).png"  class="achive"/>
+                            <h3 >25</h3>
+                            </div>
+                            <div >
+                            <img src=".\img\star.png"  class="achive">
+                            <h3>140</h3>
+                            
+                            </div>
+                            <h4 class="fit"><a href="https://in.linkedin.com/in/rohan-negi-761691264">View profile</a></h4>
+                            </div>
+                        </div>
+                        <div class="fast">
+                           <div class="break"><h2>Breakfast</h2>
+                           <h2> 10:00AM</h2></div>
+                           <div class="breakimage">
+                           <img src=".\img\avaca.jpg"  class="avaca">
+                           <div>
+                           <h2>Avacado salad</h2>
+                           <div class="carbs" >
+                          
+                           <p><span>.<span>8% Carbs<p></div>
+                           </div>
+                           </div>
+                           
+
+                            </div>
+                    </div>
+                    
+                  
+            </section>
+        </main>
+
+        <!-- Profile Section -->
+        <aside class="profile">
+            <div class="user">
+                <div class="column photo-col">
+                    <img class="photo" src=".\img\uname.png" alt="Profile">
+                </div>
+                <div class="column details-col">
+                    <h2 id="right_uname" class="name">UserName</h2>
+                    <div class="us">
+                        <img class="location" src=".\img\location-pin.png" alt="Location Icon">
+                        <h3 class="loc" id="right_location">Location</h3>
+                    </div>
+                </div>
+                <div class="column logout-col">
+                    <button id="sign-out">
+                        <img class="logout" src=".\img\power.png" alt="Logout">
+                    </button>
+                </div>
+            </div>
+            <div class="profile-info">
+                <div >
+                    <div class="zero" id="zero">0%</div>
+                <p id="profile-completion" class="set"> your Profile set</p>
+            </div>
+            <div class="edit">
+            <button id="edit-profile" >Edit your profile</button>
+        </div>
+            </div>
+            <div class="w_h_a">
+                <p><span id="weight">0</span> kg &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       <span id="height">0</span> cm &nbsp;&nbsp;&nbsp;&nbsp;      <span id="age">0</span> yrs&nbsp;</p>
+            </div>
+
+            <h3>Your Goal</h3>
+                <div class="s_r_tw">
+                    <div class="run">
+                        <img src=".\img\run.png" class="run2">
+                        <div>
+                        <h2>Running</h2>
+                        <p class="run1"><span id="running">0</span> Km </p>
+                        </div>
+                    </div>
+
+                    <div class="run">
+                        <img src=".\img\sleep.png" class="run2">
+                        <div>
+                            <h2>Sleeping</h2>
+                            <p class="run1"><span id="sleeping">0</span>Hrs </p>
+                        </div>
+                        
+                    </div> 
+                    <div class="run">
+                        <img src=".\img\loss1.png" class="run2">
+                        <div>
+                            <h2>Weight Loss</h2>
+                            <p class="run1"><span id="target-weight">0</span>kg </p>
+                        </div>
+                    </div>
+                        
+                    </div>
+            <!-- <div class="s_r_tw">
+                <p>Running: <span id="running">0</span> km | Sleeping: <span id="sleeping">0</span> hr | Target Weight <span id="target-weight">0</span> kg</p>
+            </div> -->
+            
+
+            <div class="modal" id="profile-modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p style="font-size:17px"><b>Set your profile</b></p>
+                    <div class="tab">
+                        <button class="tablinks" style="background-color: rgb(92, 208, 92);" onclick="openTab(event, 'PersonalInfo')">Personal Information</button>
+                        <button class="tablinks" style="background-color: rgb(92, 208, 92);" onclick="openTab(event, 'Goals')">Set Your Goals</button>
+                    </div>
+                    <div id="PersonalInfo" class="tabcontent">
+                         <label for="full-name">Full Name:</label><br>
+                        
+                        <input  type="text" id="full-name"><br>
+                        <label for="location">Your Location:</label><br>
+                        <input type="text" id="location"><br>
+                        <label for="dob">Date of Birth:</label><br>
+                        <input type="date" id="dob"><br>
+                        <label for="height-input">Your Height (cm):</label><br>
+                        <input type="number" id="height-input"><br>
+                        <label for="weight-input">Your Weight (kg):</label><br>
+                        <input type="number" id="weight-input">
+                    </div>
+                    <div id="Goals" class="tabcontent" style="display:none;">
+                        <label for="steps-input">Steps per day:</label>
+                        <input type="number" id="steps-input"><br>
+                        <label for="running-input">Running per day (km):</label>
+                        <input type="number" id="running-input"><br>
+                        <label for="sleep-input">Sleep per day (hrs):</label>
+                        <input type="number" id="sleep-input"><br>
+                        <label for="target-weight-input">Target weight (kg):</label>
+                        <input type="number" id="target-weight-input"><br>
+                        <label for="water-input">Water per day (L):</label>
+                        <input type="number" id="water-input">
+                    </div>
+                    <div class="modal-buttons">
+                        <!-- <button id="cancel-profile">Cancel</button> -->
+                        <button id="save-profile">Save</button>
+                    </div>
+                </div>
+            </div>
+            
+            
+                <h3>Scheduled</h3>
+               <div class="yoga">
+                <img src=".\img\yoga-pose.png" class="time">
+                <div>
+                <h3>Training -Yoga Class</h3>
+                <p class="swim">Fitness</p>
+                </div>
+                <div>
+                <p class="swi">22 Mar</p>
+                <p class="swi2">...</p>
+            </div>
+                </div>
+                <div class="yoga">
+                    <img src=".\img\yoga-pose.png" class="time">
+                    <div>
+                <h3>Training-Swimming</h3>
+                <p class="swim">Fitness</p>
+                </div>
+                <div >
+                <p class="swi1">22 Mar</p>
+                <p class="swi2">...</p>
+            </div>
+            </div>
+        </aside>
+    </div>
+    
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const subscribeButton = document.querySelector('.subscribe');
+
+    subscribeButton.addEventListener('click', function () {
+        alert('Thank you for subscribing! Your subscription is now active.');
+    });
+});
+        document.addEventListener("DOMContentLoaded", function() {
+     document.getElementById("edit-profile").onclick = function() {
+         document.getElementById("profile-modal").style.display = "block";
+         openTab(event, 'PersonalInfo'); // Open the personal info tab by default
+     };
+ });
+ 
+ document.addEventListener("DOMContentLoaded", function() {
+     document.querySelector(".close").onclick = function() {
+         document.getElementById("profile-modal").style.display = "none";
+     };
+ });
+ 
+ function openTab(evt, tabName) {
+     const tabcontent = document.getElementsByClassName("tabcontent");
+     for (let i = 0; i < tabcontent.length; i++) {
+         tabcontent[i].style.display = "none";
+     }
+     const tablinks = document.getElementsByClassName("tablinks");
+     for (let i = 0; i < tablinks.length; i++) {
+         tablinks[i].className = tablinks[i].className.replace(" active", "");
+     }
+     document.getElementById(tabName).style.display = "block";
+     evt.currentTarget.className += " active";
+ }
+ 
+ document.addEventListener("DOMContentLoaded", function() {
+     const saveButton = document.getElementById("save-profile");
+ 
+     if (saveButton) {
+         saveButton.onclick = function() {
+             const fullName = document.getElementById("full-name").value;
+             const location = document.getElementById("location").value;
+             const dob = document.getElementById("dob").value;
+             const height = document.getElementById("height-input").value;
+             const weight = document.getElementById("weight-input").value;
+ 
+             // Get goal values
+             const steps = document.getElementById("steps-input").value;
+             const running = document.getElementById("running-input").value;
+             const sleep = document.getElementById("sleep-input").value;
+             const targetWeight = document.getElementById("target-weight-input").value;
+             const water = document.getElementById("water-input").value;
+ 
+             document.getElementById("weight").innerText = weight;
+             document.getElementById("height").innerText = height;
+             document.getElementById("running").innerText = running;
+             document.getElementById("sleeping").innerText = sleep;
+             document.getElementById("target-weight").innerText = targetWeight;
+             document.getElementById("right_uname").innerText = fullName;
+             document.getElementById("right_location").innerText = location;
+ 
+ 
+             // Calculate age from DOB
+             const age = new Date().getFullYear() - new Date(dob).getFullYear();
+             document.getElementById("age").innerText = age;
+ 
+             const h_rate = 220-age;
+             const calo = steps*0.05 + running*0.1;
+             // Profile completion percentage calculation
+             let percentage = 0;
+             percentage += fullName ? 10 : 0;
+             percentage += location ? 10 : 0;
+             percentage += dob ? 10 : 0;
+             percentage += height ? 10 : 0;
+             percentage += weight ? 10 : 0;
+             percentage += steps ? 10 : 0;
+             percentage += running ? 10 : 0;
+             percentage += sleep ? 10 : 0;
+             percentage += targetWeight ? 10 : 0;
+             percentage += water ? 10 : 0;
+             
+             
+             document.getElementById("zero").innerText = percentage +"%";
+    //update values of water,steps.... here
+             document.getElementById("goal_step").innerText = steps + " Steps...";
+             document.getElementById("goal_water").innerText = water + " Litre";
+            //  document.getElementById("goal_calories").innerText = "Calories: " + (steps * 0.04).toFixed(2);
+             document.getElementById("goal_calories").innerText = calo;
+             document.getElementById("goal_heart_rate").innerText = h_rate; 
+ 
+             const goalValue = steps; // Set your goal value here
+     // document.getElementById('goal-value').innerText = goalValue;
+ 
+     function updateProgress() {
+         const userValue = parseInt(200);
+         
+ 
+         const progressValue = goalValue / 100;
+         const percent = userValue / progressValue;
+         // const progressValue = Math.min(userValue, goalValue);
+         // const percent = (progressValue / goalValue) * 100;
+ 
+         document.getElementById('progress-bar').style.width = percent + '%';
+         document.getElementById('user-value').innerText = progressValue;
+     }
+             // Send data to the backend
+             const data = {
+                 fullName,
+                 location,
+                 dob,
+                 height,
+                 weight,
+                 steps,
+                 running,
+                 sleep,
+                 targetWeight,
+                 water
+             };
+ 
+             fetch('save_profile.php', {
+                 method: 'POST',
+                 headers: {
+                     'Content-Type': 'application/json'
+                 },
+                 body: JSON.stringify(data)
+             })
+             .then(response => response.json())
+             .then(result => {
+                 if (result.success) {
+                     console.log("Profile saved successfully.");
+                 } else {
+                     console.error("Failed to save profile.");
+                 }
+             })
+             .catch(error => {
+                 console.error("Error:", error);
+             });
+ 
+             // Close the modal after saving
+             document.getElementById("profile-modal").style.display = "none";
+         };
+ 
+           
+     }
+ });
+ 
+ document.addEventListener("DOMContentLoaded", function() {
+     document.getElementById("sign-out").onclick = function() {
+         alert("You have signed out!");
+         // Implement sign-out logic here
+     };
+ });
+ 
+      </script>
+         
+ </body>
+ 
+ </html>
+  
